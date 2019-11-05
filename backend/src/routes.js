@@ -17,5 +17,6 @@ routes.put('/clients/cars/:id', CarController.update);
 routes.get('/clients/cars/services', ServiceController.index);
 routes.post('/clients/cars/services', ServiceController.store);
 routes.put('/clients/cars/services/:id', ServiceController.update);
+routes.delete('/clients/cars/services/:id', ServiceController.delete);
 
 export default routes;

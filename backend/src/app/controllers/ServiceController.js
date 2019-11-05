@@ -3,7 +3,7 @@ import Service from '../models/Service';
 
 class ClientController {
   async index(req, res) {
-    const services = await Service.findAll();
+    const services = await Service.findAll({ where: { canceled_at: null } });
     return res.json(services);
   }
 
@@ -84,6 +84,18 @@ class ClientController {
 
     // Update client
     await service.update(req.body);
+
+    return res.json(service);
+  }
+
+  async delete(req, res) {
+    // Verify if exists a client with params id
+    const service = await Service.findByPk(req.params.id);
+
+    if (!service) return res.status(404).json({ error: 'Service not found' });
+
+    // Update client
+    await service.update({ canceled_at: new Date() });
 
     return res.json(service);
   }

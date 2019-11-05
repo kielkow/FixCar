@@ -13,6 +13,7 @@ class Service extends Model {
         expect_max: Sequelize.DATE,
         price: Sequelize.FLOAT,
         bar_code: Sequelize.INTEGER,
+        canceled_at: Sequelize.DATE,
       },
       {
         sequelize,
