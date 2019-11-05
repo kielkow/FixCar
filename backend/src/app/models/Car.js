@@ -5,7 +5,7 @@ class Car extends Model {
     super.init(
       {
         client_id: Sequelize.INTEGER,
-        chassis: Sequelize.INTEGER,
+        chassis: Sequelize.STRING,
         model: Sequelize.STRING,
         year: Sequelize.INTEGER,
         sereal: Sequelize.STRING,
