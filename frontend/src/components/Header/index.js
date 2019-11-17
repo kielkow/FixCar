@@ -5,6 +5,7 @@ const Header = styled.div`
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
   border-radius: 4px;
   padding: 10px;
+  padding-left: 15px;
   margin: 20px auto;
   display: flex;
   flex-direction: row;
