@@ -18,7 +18,7 @@ import ContainerClient from '../../components/ContainerClient';
 import ContainerCar from '../../components/ContainerCar';
 import ContainerService from '../../components/ContainerService';
 
-import { Form, SubmitButton, List, Input } from './styles';
+import { Form, SubmitButton, SubmitButtonAdd, List, Input } from './styles';
 
 export default class Main extends Component {
   state = {
@@ -122,9 +122,11 @@ export default class Main extends Component {
                 )}
               </SubmitButton>
 
-              <SubmitButton>
-                <FaPlus color="#fff" size={14} />
-              </SubmitButton>
+              <SubmitButtonAdd>
+                <Link to="/client">
+                  <FaPlus color="#fff" size={14} />
+                </Link>
+              </SubmitButtonAdd>
             </Form>
 
             <List>
