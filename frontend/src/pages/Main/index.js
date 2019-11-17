@@ -92,8 +92,11 @@ export default class Main extends Component {
     return (
       <>
         <Header>
-          <FaUserCircle />
-          Matheus
+          <h1>FixCar</h1>
+          <div>
+            Matheus
+            <FaUserCircle />
+          </div>
         </Header>
         <Container>
           <ContainerClient>
