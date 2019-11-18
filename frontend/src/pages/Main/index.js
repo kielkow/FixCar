@@ -7,6 +7,7 @@ import {
   FaSearch,
   FaSpinner,
   FaPlus,
+  FaWarehouse,
 } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
@@ -17,6 +18,7 @@ import Container from '../../components/Container';
 import ContainerClient from '../../components/ContainerClient';
 import ContainerCar from '../../components/ContainerCar';
 import ContainerService from '../../components/ContainerService';
+import ContainerStock from '../../components/ContainerStock';
 
 import { Form, SubmitButton, SubmitButtonAdd, List, Input } from './styles';
 
@@ -99,131 +101,147 @@ export default class Main extends Component {
           </div>
         </Header>
         <Container>
-          <ContainerClient>
-            <h1>
-              <FaUserAlt />
-              Clients
-            </h1>
+          <div id="stock">
+            <ContainerStock>
+              <h1>
+                <FaWarehouse />
+                Stock
+              </h1>
+            </ContainerStock>
+          </div>
+          <div id="client">
+            <ContainerClient>
+              <h1>
+                <FaUserAlt />
+                Clients
+              </h1>
 
-            <Form onSubmit={this.handleSubmit}>
-              <Input
-                type="text"
-                placeholder="Search by a client..."
-                value={newRepo}
-                onChange={this.handleInputChange}
-                error={error}
-              />
+              <Form onSubmit={this.handleSubmit}>
+                <Input
+                  type="text"
+                  placeholder="Search by a client..."
+                  value={newRepo}
+                  onChange={this.handleInputChange}
+                  error={error}
+                />
 
-              <SubmitButton loading={loading}>
-                {loading ? (
-                  <FaSpinner color="#FFF" size={14} />
-                ) : (
-                  <FaSearch color="#FFF" size={14} />
-                )}
-              </SubmitButton>
+                <SubmitButton loading={loading}>
+                  {loading ? (
+                    <FaSpinner color="#FFF" size={14} />
+                  ) : (
+                    <FaSearch color="#FFF" size={14} />
+                  )}
+                </SubmitButton>
 
-              <SubmitButtonAdd>
-                <Link to="/client">
-                  <FaPlus color="#fff" size={14} />
-                </Link>
-              </SubmitButtonAdd>
-            </Form>
-
-            <List>
-              {repositories.map(repository => (
-                <li key={repository.name}>
-                  <span>{repository.name}</span>
-                  <Link
-                    to={`/repository/${encodeURIComponent(repository.name)}`}
-                  >
-                    Detalhes
+                <SubmitButtonAdd>
+                  <Link to="/client">
+                    <FaPlus color="#fff" size={14} />
                   </Link>
-                </li>
-              ))}
-            </List>
-          </ContainerClient>
-          <ContainerCar>
-            <h1>
-              <FaCar />
-              Cars
-            </h1>
+                </SubmitButtonAdd>
+              </Form>
 
-            <Form onSubmit={this.handleSubmit}>
-              <Input
-                type="text"
-                placeholder="Search by a car..."
-                value={newRepo}
-                onChange={this.handleInputChange}
-                error={error}
-              />
+              <List>
+                {repositories.map(repository => (
+                  <li key={repository.name}>
+                    <span>{repository.name}</span>
+                    <Link
+                      to={`/repository/${encodeURIComponent(repository.name)}`}
+                    >
+                      Detalhes
+                    </Link>
+                  </li>
+                ))}
+              </List>
+            </ContainerClient>
+            <div id="car_service">
+              <ContainerCar>
+                <h1>
+                  <FaCar />
+                  Cars
+                </h1>
 
-              <SubmitButton loading={loading}>
-                {loading ? (
-                  <FaSpinner color="#FFF" size={14} />
-                ) : (
-                  <FaSearch color="#FFF" size={14} />
-                )}
-              </SubmitButton>
+                <Form onSubmit={this.handleSubmit}>
+                  <Input
+                    type="text"
+                    placeholder="Search by a car..."
+                    value={newRepo}
+                    onChange={this.handleInputChange}
+                    error={error}
+                  />
 
-              <SubmitButton>
-                <FaPlus color="#fff" size={14} />
-              </SubmitButton>
-            </Form>
+                  <SubmitButton loading={loading}>
+                    {loading ? (
+                      <FaSpinner color="#FFF" size={14} />
+                    ) : (
+                      <FaSearch color="#FFF" size={14} />
+                    )}
+                  </SubmitButton>
 
-            <List>
-              {repositories.map(repository => (
-                <li key={repository.name}>
-                  <span>{repository.name}</span>
-                  <Link
-                    to={`/repository/${encodeURIComponent(repository.name)}`}
-                  >
-                    Detalhes
-                  </Link>
-                </li>
-              ))}
-            </List>
-          </ContainerCar>
-          <ContainerService>
-            <h1>
-              <FaTools />
-              Services
-            </h1>
+                  <SubmitButton>
+                    <FaPlus color="#fff" size={14} />
+                  </SubmitButton>
+                </Form>
 
-            <Form onSubmit={this.handleSubmit}>
-              <Input
-                type="text"
-                placeholder="Search by a service..."
-                value={newRepo}
-                onChange={this.handleInputChange}
-                error={error}
-              />
+                <List>
+                  {repositories.map(repository => (
+                    <li key={repository.name}>
+                      <span>{repository.name}</span>
+                      <Link
+                        to={`/repository/${encodeURIComponent(
+                          repository.name
+                        )}`}
+                      >
+                        Detalhes
+                      </Link>
+                    </li>
+                  ))}
+                </List>
+              </ContainerCar>
+              <ContainerService>
+                <h1>
+                  <FaTools />
+                  Services
+                </h1>
 
-              <SubmitButton loading={loading}>
-                {loading ? (
-                  <FaSpinner color="#FFF" size={14} />
-                ) : (
-                  <FaSearch color="#FFF" size={14} />
-                )}
-              </SubmitButton>
+                <Form onSubmit={this.handleSubmit}>
+                  <Input
+                    type="text"
+                    placeholder="Search by a service..."
+                    value={newRepo}
+                    onChange={this.handleInputChange}
+                    error={error}
+                  />
 
-              <SubmitButton>
-                <FaPlus color="#fff" size={14} />
-              </SubmitButton>
-            </Form>
+                  <SubmitButton loading={loading}>
+                    {loading ? (
+                      <FaSpinner color="#FFF" size={14} />
+                    ) : (
+                      <FaSearch color="#FFF" size={14} />
+                    )}
+                  </SubmitButton>
 
-            <List>
-              {repositories.map(repository => (
-                <li key={repository.name}>
-                  <span>{repository.name}</span>
-                  <Link
-                    to={`/repository/${encodeURIComponent(repository.name)}`}
-                  >
-                    Detalhes
-                  </Link>
-                </li>
-              ))}
-            </List>
-          </ContainerService>
+                  <SubmitButton>
+                    <FaPlus color="#fff" size={14} />
+                  </SubmitButton>
+                </Form>
+
+                <List>
+                  {repositories.map(repository => (
+                    <li key={repository.name}>
+                      <span>{repository.name}</span>
+                      <Link
+                        to={`/repository/${encodeURIComponent(
+                          repository.name
+                        )}`}
+                      >
+                        Detalhes
+                      </Link>
+                    </li>
+                  ))}
+                </List>
+              </ContainerService>
+            </div>
+          </div>
         </Container>
       </>
     );

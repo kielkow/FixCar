@@ -6,7 +6,7 @@ const ContainerClient = styled.div`
   border-radius: 4px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
   padding: 30px;
-  margin: 50px auto;
+  margin: 10px auto;
 
   &:hover {
     color: #7159c1;
