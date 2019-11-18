@@ -1,15 +1,13 @@
 import styled from 'styled-components';
 
 const Header = styled.div`
-  max-width: 1300px;
+  width: 1300px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
   border-radius: 4px;
   padding: 10px;
-  padding-left: 15px;
   margin: 20px auto;
   display: flex;
   flex-direction: row;
-  align-items: center;
   font-size: 20px;
   background: #fff;
 
@@ -21,9 +19,8 @@ const Header = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
-    position: fixed;
-    right: 0;
-    margin-right: 50px;
+    float: right;
+    margin-left: 1090px;
 
     svg {
       margin-left: 10px;

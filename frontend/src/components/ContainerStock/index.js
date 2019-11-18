@@ -5,8 +5,8 @@ const ContainerStock = styled.div`
   background: #fff;
   border-radius: 4px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-  padding: 120px;
-  margin: 50px auto;
+  padding: 30px;
+  margin: 20px;
 
   &:hover {
     color: #7159c1;
