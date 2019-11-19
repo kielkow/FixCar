@@ -12,9 +12,9 @@ export default function Routes() {
     <BrowserRouter>
       <Switch>
         <Route path="/" exact component={Main} />
-        <Route path="/client" component={Client} />
-        <Route path="/car" component={Car} />
-        <Route path="/service" component={Service} />
+        <Route path="/clients" component={Client} />
+        <Route path="/cars" component={Car} />
+        <Route path="/services" component={Service} />
         <Route path="/repository/:repository" component={Repository} />
       </Switch>
     </BrowserRouter>

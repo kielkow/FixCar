@@ -126,7 +126,7 @@ export default class Main extends Component {
                 </SubmitButton>
 
                 <SubmitButtonAdd>
-                  <Link to="/client">
+                  <Link to="/">
                     <FaPlus color="#fff" size={14} />
                   </Link>
                 </SubmitButtonAdd>
@@ -169,7 +169,7 @@ export default class Main extends Component {
                 </SubmitButton>
 
                 <SubmitButtonAdd>
-                  <Link to="/client">
+                  <Link to="/clients">
                     <FaPlus color="#fff" size={14} />
                   </Link>
                 </SubmitButtonAdd>
@@ -214,7 +214,9 @@ export default class Main extends Component {
                 </SubmitButton>
 
                 <SubmitButton>
-                  <FaPlus color="#fff" size={14} />
+                  <Link to="/cars">
+                    <FaPlus color="#fff" size={14} />
+                  </Link>
                 </SubmitButton>
               </Form>
 
@@ -255,7 +257,9 @@ export default class Main extends Component {
                 </SubmitButton>
 
                 <SubmitButton>
-                  <FaPlus color="#fff" size={14} />
+                  <Link to="/services">
+                    <FaPlus color="#fff" size={14} />
+                  </Link>
                 </SubmitButton>
               </Form>
 

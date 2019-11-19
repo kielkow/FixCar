@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { FaUserCircle, FaUserAlt, FaSpinner } from 'react-icons/fa';
+import { IoMdArrowRoundBack } from 'react-icons/io';
 
+import { Link } from 'react-router-dom';
 import Header from '../../components/Header';
 import ContainerCreateClient from '../../components/ContainerCreateClient';
 
-import { Form, Input, SubmitButton } from './styles';
+import { Form, Input, SubmitButton, SubmitButtonBack } from './styles';
 
 export default class Client extends Component {
   state = {
@@ -48,9 +50,20 @@ export default class Client extends Component {
             <Input type="text" placeholder="Address..." />
             <Input type="text" placeholder="Cel Number..." />
 
-            <SubmitButton loading={loading}>
-              {loading ? <FaSpinner color="#FFF" size={14} /> : 'Save'}
-            </SubmitButton>
+            <div>
+              <SubmitButtonBack loading={loading}>
+                <Link to="/" textDecoration={null}>
+                  {loading ? (
+                    <FaSpinner color="#FFF" size={14} />
+                  ) : (
+                    <IoMdArrowRoundBack color="#FFF" size={14} />
+                  )}
+                </Link>
+              </SubmitButtonBack>
+              <SubmitButton loading={loading}>
+                {loading ? <FaSpinner color="#FFF" size={14} /> : 'Save'}
+              </SubmitButton>
+            </div>
           </Form>
         </ContainerCreateClient>
       </>

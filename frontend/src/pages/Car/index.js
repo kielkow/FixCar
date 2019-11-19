@@ -1,10 +1,17 @@
 import React, { Component } from 'react';
-import { FaUserCircle } from 'react-icons/fa';
+import { FaUserCircle, FaCar, FaSpinner } from 'react-icons/fa';
 
+import { Link } from 'react-router-dom';
+import { IoMdArrowRoundBack } from 'react-icons/io';
 import Header from '../../components/Header';
+import ContainerCreateClient from '../../components/ContainerCreateClient';
+
+import { Form, Input, SubmitButton, SubmitButtonBack } from './styles';
 
 export default class Car extends Component {
-  state = {};
+  state = {
+    loading: false,
+  };
 
   // Carregar os dados do localStorage
   componentDidMount() {}
@@ -21,6 +28,8 @@ export default class Car extends Component {
   };
 
   render() {
+    const { loading } = this.state;
+
     return (
       <>
         <Header>
@@ -30,6 +39,33 @@ export default class Car extends Component {
             <FaUserCircle />
           </div>
         </Header>
+        <ContainerCreateClient>
+          <h1>
+            <FaCar />
+            Create car
+          </h1>
+          <Form>
+            <Input type="text" placeholder="Name..." />
+            <Input type="text" placeholder="RG..." />
+            <Input type="text" placeholder="Address..." />
+            <Input type="text" placeholder="Cel Number..." />
+
+            <div>
+              <SubmitButtonBack loading={loading}>
+                <Link to="/" textDecoration={null}>
+                  {loading ? (
+                    <FaSpinner color="#FFF" size={14} />
+                  ) : (
+                    <IoMdArrowRoundBack color="#FFF" size={14} />
+                  )}
+                </Link>
+              </SubmitButtonBack>
+              <SubmitButton loading={loading}>
+                {loading ? <FaSpinner color="#FFF" size={14} /> : 'Save'}
+              </SubmitButton>
+            </div>
+          </Form>
+        </ContainerCreateClient>
       </>
     );
   }
